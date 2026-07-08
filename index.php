@@ -64,10 +64,14 @@ $total       = mysqli_num_rows($hasil_query);
         <a href="tambah_mahasiswa.php" class="btn btn-primary">
             <span>＋</span> Tambah Mahasiswa
         </a>
-        <br><br>
-        <input type="text" id="CariNama" placeholder="Cari nama mahasiswa...">
-        <button id="btnToggleJurusan">Sembunyikan Jurusan</button>
-        <br><br>
+    </div>
+
+    <!-- TOOLBAR: cari & toggle jurusan -->
+    <div class="toolbar">
+        <div class="search-wrap">
+            <input type="text" id="CariNama" placeholder="Cari nama mahasiswa...">
+        </div>
+        <button type="button" id="btnToggleJurusan">Sembunyikan Jurusan</button>
     </div>
 
     <!-- TABLE CARD -->
