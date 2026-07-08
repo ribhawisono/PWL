@@ -122,7 +122,7 @@ $total       = mysqli_num_rows($hasil_query);
 </div><!-- /wrapper -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
-    $('document').ready(function() {
+    $(document).ready(function() {
         //fitur 1 - live search
         $("#CariNama").on("keyup", function() {
             var keyword = $(this).val().toLowerCase();
@@ -138,7 +138,7 @@ $total       = mysqli_num_rows($hasil_query);
                 $(this).find("td:eq(3), th:eq(3)").toggle();
             });
 
-            var label = $(this).text() === "sembunyikan Jurusan"
+            var label = $(this).text() === "Sembunyikan Jurusan"
                     ? "Tampilkan Jurusan" : "Sembunyikan Jurusan";
                 $(this).text(label);
         });
