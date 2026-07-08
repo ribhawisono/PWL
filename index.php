@@ -15,7 +15,6 @@ $total       = mysqli_num_rows($hasil_query);
 </head>
 <body>
 
-<!-- NAV -->
 <nav class="navbar">
     <div class="navbar-icon">🎓</div>
     <div>
@@ -26,7 +25,6 @@ $total       = mysqli_num_rows($hasil_query);
 
 <div class="wrapper">
 
-    <!-- STATS -->
     <div class="stats-row">
         <div class="stat-card">
             <div class="stat-value"><?php echo $total; ?></div>
@@ -55,7 +53,6 @@ $total       = mysqli_num_rows($hasil_query);
         </div>
     </div>
 
-    <!-- PAGE HEADER -->
     <div class="page-header">
         <div>
             <div class="page-title">Daftar Mahasiswa Aktif</div>
@@ -66,7 +63,6 @@ $total       = mysqli_num_rows($hasil_query);
         </a>
     </div>
 
-    <!-- TOOLBAR: cari & toggle jurusan -->
     <div class="toolbar">
         <div class="search-wrap">
             <input type="text" id="CariNama" placeholder="Cari nama mahasiswa...">
@@ -74,7 +70,6 @@ $total       = mysqli_num_rows($hasil_query);
         <button type="button" id="btnToggleJurusan">Sembunyikan Jurusan</button>
     </div>
 
-    <!-- TABLE CARD -->
     <div class="card">
         <div class="table-wrap">
             <?php if ($total === 0): ?>
@@ -96,7 +91,6 @@ $total       = mysqli_num_rows($hasil_query);
                 <tbody>
                 <?php
                 $no = 1;
-                // Reset pointer hasil query
                 mysqli_data_seek($hasil_query, 0);
                 while ($baris = mysqli_fetch_assoc($hasil_query)):
                 ?>
