@@ -123,7 +123,32 @@ $total       = mysqli_num_rows($hasil_query);
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
     $('document').ready(function() {
-        //Kode interaktif diletakan di sini
+        //fitur 1 - live search
+        $("#CariNama").on("keyup", function() {
+            var keyword = $(this).val().toLowerCase();
+            $("table tr:not(:first)").each(function() {
+                var nama = $(this).find("td:eq(2)").text().toLowerCase();
+                $(this).toggle(nama.indexOf(keyword) !== -1);
+            });
+        });
+
+        //fitur 2 - toggle jurusan
+        $("#btnToggleJurusan").click(function() {
+            $("table tr").each(function() {
+                $(this).find("td:eq(3), th:eq(3)").toggle();
+            });
+
+            var label = $(this).text() === "sembunyikan Jurusan"
+                    ? "Tampilkan Jurusan" : "Sembunyikan Jurusan";
+                $(this).text(label);
+        });
+
+        //fitur 3 - konfirmasi manual
+        $(".btn-hapus").click(function(e) {
+            if (!confirm("Yakin ingin menghapus data mahasiswa ini?")) {
+                e.preventDefault();
+            }
+        });
     });
 </script>
 </body>
